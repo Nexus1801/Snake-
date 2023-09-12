@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Splashscreen : MonoBehaviour
+public class Splashscreen2 : MonoBehaviour
 {
   void Start() {
     StartCoroutine(ToMainMenu());
   }
 
   IEnumerator ToMainMenu() {
-    yield return new WaitForSeconds(2);
-    SceneManager.LoadScene("splashscreen2");
+    yield return new WaitForSeconds(3);
+    SceneManager.LoadScene("MainMenu");
   }
 
 }

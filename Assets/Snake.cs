@@ -11,7 +11,7 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     public int initialSize = 4;
 
-    public float score;
+    public float score = 0;
     public TextMeshProUGUI scoreText;
 
     private void Start()
@@ -84,9 +84,4 @@ public class Snake : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collider2D other){
-        if(other.tag == "Obstacle"){
-            score = 0;
-        }
-    }
 }

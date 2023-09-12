@@ -8,6 +8,8 @@ public class Food : MonoBehaviour
     public float score;
     public TextMeshProUGUI scoreText;
 
+    public AudioSource audioPlayer;
+
     private void Start()
     {
         RandomizePosition();
@@ -34,6 +36,7 @@ public class Food : MonoBehaviour
         if (other.tag == "Player"){
             RandomizePosition();
             score += 1;
+            audioPlayer.Play();
         }
     }
 }

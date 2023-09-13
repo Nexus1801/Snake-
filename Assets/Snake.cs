@@ -11,11 +11,14 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     public int initialSize = 4;
 
-    public float score = 0;
+    public float score;
     public TextMeshProUGUI scoreText;
+
+    public AudioSource audioPlayer;
 
     private void Start()
     {
+        score = 0;
         ResetState();
     }
 
@@ -80,6 +83,7 @@ public class Snake : MonoBehaviour
         if (other.tag == "Food"){
             Grow();
         }else if(other.tag == "Obstacle"){
+            audioPlayer.Play();
             ResetState();
         }
     }

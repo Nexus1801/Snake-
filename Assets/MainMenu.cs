@@ -10,6 +10,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    public void goCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void loadVersionNotes()
+    {
+        SceneManager.LoadScene("Version Notes");
+    }
+
     public void endGame()
     {
         Application.Quit();

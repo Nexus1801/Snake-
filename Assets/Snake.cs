@@ -27,12 +27,20 @@ public class Snake : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W)){
             _direction = Vector2.up;
+            gameObject.transform.localRotation = new Quaternion (0, 0, 0, 0);
+            gameObject.transform.localScale = new Vector3 (1, 1 ,1);
         }else if(Input.GetKeyDown(KeyCode.S)){
-            _direction = Vector2.down;    
+            _direction = Vector2.down;
+            gameObject.transform.localRotation = new Quaternion (0, 0, 180, 0);    
+            gameObject.transform.localScale = new Vector3 (1, 1 ,1);
         }else if(Input.GetKeyDown(KeyCode.A)){
             _direction = Vector2.left;
+            gameObject.transform.localRotation = new Quaternion (0, 0, 90, 90);
+            gameObject.transform.localScale = new Vector3 (1, 1 ,1);
         }else if(Input.GetKeyDown(KeyCode.D)){
             _direction = Vector2.right;
+            gameObject.transform.localRotation = new Quaternion (0, 0, 90, 90);
+            gameObject.transform.localScale = new Vector3 (1, -1 ,1);
         }
     }
 
@@ -60,6 +68,7 @@ public class Snake : MonoBehaviour
         _segments.Add(segment);
 
     }
+
     //reset the position of the snake if run into wall or itself(prefab for the other segments)
     private void ResetState(){
         for(int i = 1; i < _segments.Count; i++){
@@ -74,8 +83,9 @@ public class Snake : MonoBehaviour
         }
 
         this.transform.position = Vector3.zero;
-        
-
+        _direction = Vector2.right;
+        gameObject.transform.localRotation = new Quaternion (0, 0, 90, 90);
+        gameObject.transform.localScale = new Vector3 (1, -1 ,1);
     }
     //if statments for collision of food object or obstacles being walls or segments
     private void OnTriggerEnter2D(Collider2D other)

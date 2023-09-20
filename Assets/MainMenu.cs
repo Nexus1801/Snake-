@@ -15,6 +15,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void goOGBuild()
+    {
+        SceneManager.LoadScene("OGSnake");
+    }    
+
     public void loadVersionNotes()
     {
         SceneManager.LoadScene("Version Notes");

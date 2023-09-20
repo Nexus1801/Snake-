@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Version Notes.unity
     guid: fd732c9e629cc914e975c62fe41f98e6
+  - enabled: 1
+    path: Assets/OGSnakeGame/OGSnake.unity
+    guid: 1d18bb0d348f4214c80c294ed019e8a6
   m_configObjects: {}

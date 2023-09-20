@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Food
   - Obstacle
+  - Food
+  - OGFood
+  - OGObstacle
   layers:
   - Default
   - TransparentFX

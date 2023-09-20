@@ -14,6 +14,8 @@ public class Snake : MonoBehaviour
     public float score = 0;
     public TextMeshProUGUI scoreText;
     
+    private bool canMoveLeft = false;
+    private bool canMoveUp = true;
 
     public AudioSource audioPlayer;
 
@@ -25,22 +27,30 @@ public class Snake : MonoBehaviour
     //movement keys
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)){
+        if (Input.GetKeyDown(KeyCode.W) && canMoveUp == true){
             _direction = Vector2.up;
             gameObject.transform.localRotation = new Quaternion (0, 0, 0, 0);
             gameObject.transform.localScale = new Vector3 (1, 1 ,1);
-        }else if(Input.GetKeyDown(KeyCode.S)){
+            canMoveUp = false;
+            canMoveLeft = true;
+        }else if(Input.GetKeyDown(KeyCode.S) && canMoveUp == true){
             _direction = Vector2.down;
             gameObject.transform.localRotation = new Quaternion (0, 0, 180, 0);    
             gameObject.transform.localScale = new Vector3 (1, 1 ,1);
-        }else if(Input.GetKeyDown(KeyCode.A)){
+            canMoveUp = false;
+            canMoveLeft = true;
+        }else if(Input.GetKeyDown(KeyCode.A) && canMoveLeft == true){
             _direction = Vector2.left;
             gameObject.transform.localRotation = new Quaternion (0, 0, 90, 90);
             gameObject.transform.localScale = new Vector3 (1, 1 ,1);
-        }else if(Input.GetKeyDown(KeyCode.D)){
+            canMoveUp = true;
+            canMoveLeft = false;
+        }else if(Input.GetKeyDown(KeyCode.D) && canMoveLeft == true){
             _direction = Vector2.right;
             gameObject.transform.localRotation = new Quaternion (0, 0, 90, 90);
             gameObject.transform.localScale = new Vector3 (1, -1 ,1);
+            canMoveUp = true;
+            canMoveLeft = false;
         }
     }
 

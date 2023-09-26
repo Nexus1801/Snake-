@@ -11,13 +11,16 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
     public int initialSize = 4;
 
-    public float score = 0;
+    public float score;
     public TextMeshProUGUI scoreText;
+    public float highscore;
+    public TextMeshProUGUI highscoreText;
     
     private bool canMoveLeft = false;
     private bool canMoveUp = true;
 
     public AudioSource audioPlayer;
+    public AudioSource highscoreAudio;
 
     private void Start()
     {
@@ -52,6 +55,8 @@ public class Snake : MonoBehaviour
             canMoveUp = true;
             canMoveLeft = false;
         }
+        scoreText.text = "" + score;
+        highscoreText.text = "" + highscore;
     }
 
     //transform the snake when eating the food object
@@ -81,6 +86,8 @@ public class Snake : MonoBehaviour
 
     //reset the position of the snake if run into wall or itself(prefab for the other segments)
     private void ResetState(){
+        
+        
         for(int i = 1; i < _segments.Count; i++){
             Destroy(_segments[i].gameObject);
         }
@@ -102,11 +109,16 @@ public class Snake : MonoBehaviour
     {
         if (other.tag == "Food"){
             score += 1;
+            if(score > highscore){
+                highscoreAudio.Play();
+                highscore = score;
+            }
             Grow();
         }else if(other.tag == "Obstacle"){
-            scoreText.text = "";
             audioPlayer.Play();
+            score = score - score;
             ResetState();
+            
         }
     }
 

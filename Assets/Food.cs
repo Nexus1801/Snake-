@@ -5,22 +5,13 @@ public class Food : MonoBehaviour
 {
     public BoxCollider2D gridArea;
 
-    public float score;
-    public TextMeshProUGUI scoreText;
-
-    public float highscore;
-    public TextMeshProUGUI highscoretext;
+    
 
     public AudioSource audioPlayer;
 
     private void Start()
     {
         RandomizePosition();
-    }
-
-    private void Update(){
-        scoreText.text = "" + score;
-        highscoretext.text = "" + highscore;
     }
 
     //Randomize the food location on startup or when touched by the player
@@ -39,10 +30,7 @@ public class Food : MonoBehaviour
     {
         if (other.tag == "Player"){
             RandomizePosition();
-            score += 1;
-            if(score > highscore){
-                highscore = score;
-            }
+            
             audioPlayer.Play();
         }
     }

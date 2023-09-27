@@ -21,6 +21,7 @@ public class Snake : MonoBehaviour
 
     public AudioSource audioPlayer;
     public AudioSource highscoreAudio;
+    public CameraShake cameraShake;
 
     private void Start()
     {
@@ -87,7 +88,6 @@ public class Snake : MonoBehaviour
     //reset the position of the snake if run into wall or itself(prefab for the other segments)
     private void ResetState(){
         
-        
         for(int i = 1; i < _segments.Count; i++){
             Destroy(_segments[i].gameObject);
         }
@@ -117,6 +117,7 @@ public class Snake : MonoBehaviour
         }else if(other.tag == "Obstacle"){
             audioPlayer.Play();
             score = score - score;
+            StartCoroutine(cameraShake.Shake(0.15f, 0.1f));
             ResetState();
             
         }

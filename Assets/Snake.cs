@@ -13,11 +13,14 @@ public class Snake : MonoBehaviour
 
     public float score;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI pauseText;
     public float highscore;
     public TextMeshProUGUI highscoreText;
     
     private bool canMoveLeft = false;
     private bool canMoveUp = true;
+
+    private bool isPaused = false;
 
     public AudioSource audioPlayer;
     public AudioSource highscoreAudio;
@@ -26,12 +29,24 @@ public class Snake : MonoBehaviour
     private void Start()
     {
         ResetState();
+        pauseText.enabled = false;
     }
+    
 
     //movement keys
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && canMoveUp == true){
+        if (Input.GetKeyDown(KeyCode.P) && isPaused == false) {
+            Time.timeScale = 0;
+            isPaused = true;
+            pauseText.enabled = true;
+        } 
+        else if (Input.GetKeyDown(KeyCode.P) && isPaused == true) {
+            Time.timeScale = 1;
+            isPaused = false;
+            pauseText.enabled = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && canMoveUp == true){
             _direction = Vector2.up;
             gameObject.transform.localRotation = new Quaternion (0, 0, 0, 0);
             gameObject.transform.localScale = new Vector3 (1, 1 ,1);

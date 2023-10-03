@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 786270580}
   - component: {fileID: 786270579}
   m_Layer: 5
-  m_Name: PauseText
+  m_Name: PausePrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 1757546952}
   - component: {fileID: 1757546951}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PauseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2358,7 @@ MonoBehaviour:
   WhichColor: 0
   score: 0
   scoreText: {fileID: 1536759871}
-  pauseText: {fileID: 786270579}
+  pauseText: {fileID: 1757546951}
   highscore: 0
   highscoreText: {fileID: 1200012985}
   audioPlayer: {fileID: 1403658177}

@@ -10,6 +10,8 @@ public class Snake : MonoBehaviour
 
     public Transform segmentPrefab;
     public int initialSize = 4;
+    public Segments theSegments;
+    public int whichColor;
 
     public float score;
     public TextMeshProUGUI scoreText;
@@ -30,6 +32,8 @@ public class Snake : MonoBehaviour
     {
         ResetState();
         pauseText.enabled = false;
+        theSegments.ChangePrefabSprite(whichColor);
+
     }
     
 

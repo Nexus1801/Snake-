@@ -2355,7 +2355,7 @@ MonoBehaviour:
   initialSize: 0
   theSegments: {fileID: -5415988010413057909, guid: 9236d5ea3896f7248903bd2272c0c719,
     type: 3}
-  WhichColor: 0
+  whichColor: 1
   score: 0
   scoreText: {fileID: 1536759871}
   pauseText: {fileID: 786270579}
@@ -2450,7 +2450,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7e36608fdfca0924fbb98bbca215e935, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22fd9864b03fa6d4d8fc6db3daf0d56a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

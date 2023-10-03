@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4014952206790427301}
   - component: {fileID: 7664750909714939078}
   - component: {fileID: 5267158501242468460}
+  - component: {fileID: -5415988010413057909}
   m_Layer: 0
   m_Name: SnakeSegment
   m_TagString: Obstacle
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f08c28c4172fb094383d4f9f90966c7d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0af66ae06c499c546b6167dcc3f30e6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,3 +109,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &-5415988010413057909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246782386460098381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5515b88cb09bd8449967a7fac55282bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabSprites:
+  - {fileID: 21300000, guid: f08c28c4172fb094383d4f9f90966c7d, type: 3}
+  - {fileID: 21300000, guid: 8a5bdb7db9658e643b20f0a448914d2d, type: 3}
+  - {fileID: 21300000, guid: 0af66ae06c499c546b6167dcc3f30e6e, type: 3}
+  - {fileID: 21300000, guid: c4160e78040b99649bbf2e199991cec5, type: 3}

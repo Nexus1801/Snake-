@@ -18,6 +18,8 @@ public class Snake : MonoBehaviour
     public TextMeshProUGUI pauseText;
     public float highscore;
     public TextMeshProUGUI highscoreText;
+    public float goalscore;
+    public TextMeshProUGUI goalscoreText;
     
     private bool canMoveLeft = false;
     private bool canMoveUp = true;
@@ -77,6 +79,7 @@ public class Snake : MonoBehaviour
         }
         scoreText.text = "" + score;
         highscoreText.text = "" + highscore;
+        goalscoreText.text = "" + goalscore;
     }
 
     //transform the snake when eating the food object
@@ -131,6 +134,9 @@ public class Snake : MonoBehaviour
             if(score > highscore){
                 highscoreAudio.Play();
                 highscore = score;
+            }
+            if(score > goalscore){
+                goalscore += 10;
             }
             Grow();
         }else if(other.tag == "Obstacle"){

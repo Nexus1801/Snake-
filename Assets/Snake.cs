@@ -29,6 +29,7 @@ public class Snake : MonoBehaviour
     public AudioSource audioPlayer;
     public AudioSource highscoreAudio;
     public CameraShake cameraShake;
+    public AudioSource cheering;
 
     private void Start()
     {
@@ -136,7 +137,10 @@ public class Snake : MonoBehaviour
                 highscore = score;
             }
             if(score > goalscore){
-                goalscore += 10;
+                goalscore += 5;
+            }
+            if(goalscore == 25){
+                cheering.Play();
             }
             Grow();
         }else if(other.tag == "Obstacle"){

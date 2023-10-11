@@ -50,6 +50,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Version Notes");
     }
 
+    public void loadFuturePlans()
+    {
+        SceneManager.LoadScene("FuturePlans");
+    }
+
     public void endGame()
     {
         Application.Quit();
